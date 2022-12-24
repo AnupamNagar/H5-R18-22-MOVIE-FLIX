@@ -10,7 +10,7 @@ function Home() {
     <div>
       
       <Main />
-      <Row title='Upcomig' fetchUrl={requests.requestUpcoming} />
+      <Row title='Upcoming' fetchUrl={requests.requestUpcoming} />
       <Row title='Trending' fetchUrl={requests.requestTrending} />
       <Row title='Top Rated' fetchUrl={requests.requestTopRated} />
       <Row title='Popular' fetchUrl={requests.requestPopular} />

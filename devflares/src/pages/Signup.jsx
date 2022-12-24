@@ -1,7 +1,28 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom'
+import {userAuth} from '../context/AuthContext'
 
-function Signup() {
+function Signup() {  
+
+    const [email , setEmail] = useState('');
+    const [password , setPassword] = useState('');
+    const [name,  setName] = useState('');
+    const {user , signUp} = userAuth();
+    const navigate  = useNavigate();
+
+    const  handleSubmit = async(e) => {
+        e.preventDefault();
+        try{
+            await signUp(email , password);
+            navigate("/");
+        }catch(err){
+            alert(err.message);
+        }
+    };
+
+
+
   return (
     // <!-- component -->
     <div class="bg-grey-lighter min-h-screen flex flex-col">
@@ -12,29 +33,41 @@ function Signup() {
                             type="text"
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="fullname"
-                            placeholder="Full Name" />
+                            placeholder="Full Name"
+                            value={name}
+                            onChange={(e)=> setName(e.target.value)} />
     
                         <input 
                             type="text"
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="email"
-                            placeholder="Email" />
+                            placeholder="Email" 
+                            value={email}
+                            onChange={(e)=> setEmail(e.target.value)}/>
     
                         <input 
                             type="password"
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="password"
-                            placeholder="Password" />
-                        <input 
+                            placeholder="Password"
+                            value={password}
+                            onChange = {(e) => setPassword(e.target.value)} />
+                        {/* <input 
                             type="password"
                             class="block border border-grey-light w-full p-3 rounded mb-4"
                             name="confirm_password"
                             placeholder="Confirm Password" />
-    
+     */}
                         <button
                             type="submit"
                             class="w-full text-center py-3 rounded bg-green text-white bg-red-600 hover:bg-green-dark focus:outline-none my-1"
+                            onClick={handleSubmit}
                         >Create Account</button>
+                         <button
+                            type="submit"
+                            class="w-full text-center py-3 rounded bg-green text-white bg-red-600 hover:bg-green-dark focus:outline-none my-1"
+                            onClick={handleSubmit}
+                        >Sign Up With Google </button>
     
                         <div class="text-center text-sm text-grey-dark mt-4">
                             By signing up, you agree to the 
