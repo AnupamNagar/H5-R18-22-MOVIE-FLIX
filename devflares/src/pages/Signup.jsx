@@ -68,7 +68,7 @@ function Signup() {
                             class="w-full text-center py-3 rounded bg-green text-white bg-red-600 hover:bg-green-dark focus:outline-none my-1"
                             onClick={handleSubmit}
                         >Sign Up With Google </button>
-    
+                           
                         <div class="text-center text-sm text-grey-dark mt-4">
                             By signing up, you agree to the 
                             <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">

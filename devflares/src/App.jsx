@@ -17,12 +17,13 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Signin />} />
-        <Route 
+        {/* <Route 
           path = '/profile'
           element = {
           <ProtectedRoute>
             <Profile />
-          </ProtectedRoute>} />
+          </ProtectedRoute>} /> */}
+          <Route path='/profile' element={<Profile />} />
       </Routes>
     </AuthContextProvider>
     </>
