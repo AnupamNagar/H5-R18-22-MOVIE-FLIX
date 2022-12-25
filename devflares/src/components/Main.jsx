@@ -2,8 +2,10 @@ import React, { useState , useEffect } from 'react'
 import axios from  'axios';
 import requests from './Requests'
 
+
 function Main() {
     const[movies , setMovies] = useState([])   ;
+    
     
     const movie = movies[Math.floor(Math.random() * movies.length )];
     useEffect(() => {
@@ -11,7 +13,7 @@ function Main() {
             setMovies(response.data.results)
         })
     }, []);
-    // console.log(movie);
+    console.log(movie);
 
 
   return (

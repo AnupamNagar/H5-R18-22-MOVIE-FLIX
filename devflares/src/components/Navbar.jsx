@@ -29,8 +29,12 @@ function Navbar() {
         
         {
           user?.email ?(
-            <div className='' >
-              <Link to='/profile'><button className='text-white pr-4 cursor-pointer hover:scale-110 delay-150 duration-300'>Account</button></Link>
+            <div className='space-x-4' >
+               <Link to='/profile'><button className='text-white pr-4 cursor-pointer hover:scale-110 delay-150 duration-300'>Account</button></Link>
+              <Link to='/news'>
+              <button className='bg-red-600  px-4 py-2 prcursor-pointer text-white rounded  hover:scale-110 delay-150 duration-300' >News</button>
+              </Link>
+             
               <button className='bg-red-600  px-4 py-2 cursor-pointer text-white rounded  hover:scale-110 delay-150 duration-300' onClick={handlelogout}>Log Out</button>
             </div>
           ) : (

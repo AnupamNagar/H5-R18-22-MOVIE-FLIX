@@ -12,7 +12,7 @@ function Row({ title, fetchUrl, rowId }) {
       setMovies(response.data.results);
     });
   }, [fetchUrl]);
-  console.log(movies);
+  // console.log(movies);
 
   return (
     <>
@@ -40,11 +40,12 @@ function Row({ title, fetchUrl, rowId }) {
                         {movie.title}
                       </h2>
                       <div onClick={() => setLike(!like)}>
-                        {/* <AiOutlineHeart className="text-red-700"  />
+                        {/* {/* <AiOutlineHeart className="text-red-700"  />
                          */}
-                        {
+                        {/* {
                           like? <h2 className="text-xl">❤️</h2> : <h2 className="text-xl">🤍</h2>
-                        }
+                        }  */}
+                        <p className="text-white text-black">⭐{movie.vote_average}</p>
                       </div>
                       
                       

@@ -7,6 +7,7 @@ import Signin from './pages/Signin'
 import Profile from './pages/Profile'
 import { AuthContextProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
+import Newses from './components/Newses'
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
      <AuthContextProvider>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />         
         <Route path='/signup' element={<Signup />} />
         <Route path='/login' element={<Signin />} />
         {/* <Route 
@@ -24,6 +25,7 @@ function App() {
             <Profile />
           </ProtectedRoute>} /> */}
           <Route path='/profile' element={<Profile />} />
+          <Route path='/news' element={<Newses />} />
       </Routes>
     </AuthContextProvider>
     </>

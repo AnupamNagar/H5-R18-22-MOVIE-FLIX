@@ -8,7 +8,7 @@ function ProtectedRoute() {
         return <Navigate to='/login' />
     }
     else{
-        return <Navigate to='/profile' />
+        return <Navigate to='/' />
     }
 
 }
