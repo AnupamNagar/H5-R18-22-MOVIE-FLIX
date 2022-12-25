@@ -22,7 +22,7 @@ const News = () => {
             {news.map((articles) => {
                 
                     if (loading===true) {
-                        return(<BounceLoader></BounceLoader>)
+                        return(<BounceLoader color='red'></BounceLoader>)
                     }else{
                         return (
                             <>
